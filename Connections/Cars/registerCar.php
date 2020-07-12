@@ -14,7 +14,8 @@ $car = [
     'model' => $model,
     'plate' => $plate,
     'year'=>$year,
-    'color' => $color
+    'color' => $color,
+    'idUser'=>null
 ];
 
 try {
