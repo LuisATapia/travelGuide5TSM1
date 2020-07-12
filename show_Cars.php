@@ -65,6 +65,7 @@
                         "&year=".$row->year.
                         "&plate=".$row->plate.
                         "&color=".$row->color.
+                        "&idU=".$row->idUser.
                         "'>Edit</a> ".
                         "<a class='btn btn-danger' href='Connections/Cars/dropCar.php?id=".$row->_id."'>Delete</a></td>".
                     "</tr>";
@@ -81,6 +82,7 @@
                         "&year=".$row->year.
                         "&plate=".$row->plate.
                         "&color=".$row->color.
+                        "&idU=".$row->idUser.
                         "'>Edit</a> ".
                         "<a class='btn btn-danger' href='Connections/Cars/dropCar.php?id=".$row->_id."'>Delete</a> ".
                         "<a class='btn btn-primary' href='assignCar.php?id=".$row->_id.

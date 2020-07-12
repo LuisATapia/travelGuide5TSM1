@@ -10,6 +10,13 @@ $plate = $_POST["updatePlate"];
 $year = $_POST["updateYear"];
 $color = $_POST["updateColor"];
 
+if($_POST["idUser"]!="")
+{
+    $idU=$_POST["idUser"];
+}else{
+    $idU=null;
+}
+
 try {
     $bulk->update(
         ['_id' => new MongoDB\BSON\ObjectId($id)],
@@ -18,7 +25,8 @@ try {
             'model' => $model,
             'plate' => $plate,
             'year' => $year,
-            'color' => $color
+            'color' => $color,
+            'idUser'=>$idU
         ]
     );
     $result = $manager->executeBulkWrite($dbname, $bulk);
