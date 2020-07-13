@@ -12,9 +12,10 @@ try {
     $bulk->update(
         ['_id' => new MongoDB\BSON\ObjectId($id)],
         [
-            "nunCard" => $num,
+            "numCard" => $num,
             'booth' => $name,
             'toll' => $toll,
+            'idUser'=>$idUser
         ]
     );
     $result = $manager->executeBulkWrite($dbname, $bulk);

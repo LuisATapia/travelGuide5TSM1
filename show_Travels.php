@@ -59,11 +59,11 @@
 
           foreach ($rows as $row) {
             echo "<tr>" .
-              "<td>" . $row->nunCard . "</td>" .
+              "<td>" . $row->numCard . "</td>" .
               "<td>" . $row->booth . "</td>" .
               "<td>" . $row->toll . "</td>" .
               "<td><a class='btn btn-info' href='editTravel.php?id=" . $row->_id .
-              "&numCard=" . $row->nunCard .
+              "&numCard=" . $row->numCard .
               "&booth=" . $row->booth .
               "&toll=" . $row->toll .
               "'>Edit</a> " .
