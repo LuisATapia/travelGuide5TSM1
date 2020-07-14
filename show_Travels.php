@@ -51,9 +51,10 @@
                 <input id='buscar' type='text' class='form-control' placeholder='Search...' />
                 </tr>
                 <tr>
-                <th>Number Cars</th>
+                <th>Number Card</th>
                 <th>Name Booth</th>
                 <th>Toll</th>
+                <th>date</th>
                 </tr>
                 </thead>";
 
@@ -62,6 +63,7 @@
               "<td>" . $row->numCard . "</td>" .
               "<td>" . $row->booth . "</td>" .
               "<td>" . $row->toll . "</td>" .
+              "<td>".  $row->date."</td>". 
               "<td><a class='btn btn-info' href='editTravel.php?id=" . $row->_id .
               "&numCard=" . $row->numCard .
               "&booth=" . $row->booth .
