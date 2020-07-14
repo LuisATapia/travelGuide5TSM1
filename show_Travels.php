@@ -2,14 +2,14 @@
 
 <head>
   <title>Show Travels</title>
-  <?php require("head.php"); session_start(); ?>
+  <?php require("head.php");
+  session_start(); ?>
 
   <?php
-        if(!isset($_SESSION['idUser']) || $_SESSION['typeUser']=="user")
-        {
-           header("Location: menu_Master.php"); 
-        }
-    ?> 
+  if (!isset($_SESSION['idUser'])) {
+    header("Location: menu_Master.php");
+  }
+  ?>
   <style>
     body {
       background-image: url(img/background_register_travel.jpg);
@@ -67,11 +67,13 @@
                 </thead>";
 
           foreach ($rows as $row) {
-            echo "<tr>" .
+            if($_SESSION['typeUser']=="master")
+            {
+              echo "<tr>" .
               "<td>" . $row->numCard . "</td>" .
               "<td>" . $row->booth . "</td>" .
               "<td>" . $row->toll . "</td>" .
-              "<td>".  $row->date."</td>". 
+              "<td>" .  $row->date . "</td>" .
               "<td><a class='btn btn-info' href='editTravel.php?id=" . $row->_id .
               "&numCard=" . $row->numCard .
               "&booth=" . $row->booth .
@@ -79,11 +81,34 @@
               "'>Edit</a> " .
               "<a class='btn btn-danger' href='Connections/Travels/dropTravel.php?id=" . $row->_id . "'>Delete</a></td>" .
               "</tr>";
+            }else if($_SESSION['typeUser']=="standard")
+            {
+              echo "<tr>" .
+              "<td>" . $row->numCard . "</td>" .
+              "<td>" . $row->booth . "</td>" .
+              "<td>" . $row->toll . "</td>" .
+              "<td>" .  $row->date . "</td>" .
+              "</tr>";
+            }
+
+            if ($_SESSION['typeUser'] == "user") {
+              if ($row->idUser == $_SESSION['idUser']) {
+                echo "<tr>" .
+                  "<td>" . $row->numCard . "</td>" .
+                  "<td>" . $row->booth . "</td>" .
+                  "<td>" . $row->toll . "</td>" .
+                  "<td>" .  $row->date . "</td>" .
+                  "</tr>";
+              }else{
+
+              }
+            }
           }
+
 
           echo "</table>";
         } catch (MongoDB\Driver\Exception\Exception $e) {
-          //die("Error Encountered: ".$e);
+          die("Error Encountered: " . $e);
         }
         ?>
       </div>
