@@ -2,7 +2,7 @@
 
 <head>
   <title>Register</title>
-  <?php require("head.php") ?>
+  <?php require("head.php"); ?>
   <style>
     body {
       background-image: url(img/background_register.jpg);

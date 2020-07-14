@@ -2,7 +2,13 @@
 
 <head>
   <title>Register Cards</title>
-  <?php require("head.php")  ?>
+  <?php require("head.php");  ?>
+  <?php
+  session_start();
+  if (!isset($_SESSION['idUser']) || $_SESSION['typeUser'] == "user") {
+    header("Location: menu_Master.php");
+  }
+  ?>
   <style>
     body {
       background-image: url(img/background_register_Cards.jpg);
@@ -26,7 +32,7 @@
       <h3 class="card-title">Register a Card</h3>
     </div>
     <div class="card-body">
-      <form class="row g-3 container m-auto" name="registerCad"  method="POST" action="Connections/Cards/registerCard.php">
+      <form class="row g-3 container m-auto" name="registerCad" method="POST" action="Connections/Cards/registerCard.php">
         <div class="col-md-4">
           <label for="inputHex" class="form-label">Number Hex:</label>
           <input type="text" class="form-control" id="cardHex" name="cardHex" require="">
@@ -40,7 +46,7 @@
           <input type="text" class="form-control" id="cardIdUser" name="cardIdUser" require="">
         </div>
         <div class="col-12">
-        <Input type="submit" class="btn btn-primary" onclick="" value="Register">
+          <Input type="submit" class="btn btn-primary" onclick="" value="Register">
         </div>
       </form>
     </div>
