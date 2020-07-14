@@ -4,7 +4,7 @@
 	<?php require("head.php")  ?>
     <style>
         body{
-            background-image: url(img/background_register.jpg);
+            background-image: url(img/background_register_cars.jpg);
             background-attachment: fixed;
             background-size: 100vw 100vh;
         }
@@ -24,6 +24,9 @@
         <div class="row" style="padding:15">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-right">
+                <?php
+                session_start();
+                ?>
                     <a class="btn btn-success" href="register_Cars.php">Add Car<i class="fas fa-car"></i></a>
                 </div>
             </div>
@@ -47,10 +50,20 @@
                 <th>Year</th>
                 <th>Plate</th>
                 <th>Color</th>
-                <th>Action</th>
+                <th>Actions</th>
                 </thead>";
                 
                 foreach($rows as $row){
+                    if($_SESSION['typeUser']=="standard")
+                    {
+                        echo "<tr>".
+                        "<td>".$row->niv."</td>".
+                        "<td>".$row->model."</td>".
+                        "<td>".$row->year."</td>".
+                        "<td>".$row->plate."</td>".    
+                        "<td>".$row->color."</td>".
+                    "</tr>";
+                    }else{
                     if($row->idUser!="")
                     {
                         echo "<tr>".
@@ -94,7 +107,7 @@
                         "'>Assign Car</a></td>".
                     "</tr>";
                     }
-                    
+                } 
                     
                 }
 

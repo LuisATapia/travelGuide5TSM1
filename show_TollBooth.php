@@ -5,7 +5,7 @@
   <?php require("head.php")  ?>
   <style>
     body {
-      background-image: url(img/background_register.jpg);
+      background-image: url(img/background_register_tollBooth.jpg);
       background-attachment: fixed;
       background-size: 100vw 100vh;
     }
@@ -24,12 +24,19 @@
 </head>
 
 <body background="">
-  <?php require("menu_Logged.php") ?>
+  <?php
+  session_start(); 
+  require("menu_Logged.php") ?>
   <div class="card text-center container" id="form">
     <div class="row" style="padding:15">
       <div class="col-lg-12 margin-tb">
         <div class="pull-right">
+          <?php
+          if($_SESSION['typeUser'] != "user")
+          {
+          ?>
           <a class="btn btn-success" href="register_TolBooth.php">Add TollBooth<i class="fas fa-cash-register"></i></i></i></a>
+          <?php } ?>
         </div>
       </div>
     </div>
@@ -58,6 +65,13 @@
                 </thead>";
 
           foreach ($rows as $row) {
+            if($_SESSION['typeUser'] == "standard")
+            {
+              echo "<tr>" .
+              "<td>" . $row->name . "</td>" .
+              "<td>" . $row->km . "</td>" .
+              "</tr>";
+            }else{
             echo "<tr>" .
               "<td>" . $row->name . "</td>" .
               "<td>" . $row->km . "</td>" .
@@ -67,6 +81,7 @@
               "'>Edit</a> " .
               "<a class='btn btn-danger' href='Connections/Booth/dropBooth.php?id=" . $row->_id . "'>Delete</a></td>" .
               "</tr>";
+            }
           }
 
           echo "</table>";

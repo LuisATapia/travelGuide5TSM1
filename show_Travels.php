@@ -5,7 +5,7 @@
   <?php require("head.php")  ?>
   <style>
     body {
-      background-image: url(img/background_register.jpg);
+      background-image: url(img/background_register_travel.jpg);
       background-attachment: fixed;
       background-size: 100vw 100vh;
     }
@@ -55,6 +55,7 @@
                 <th>Name Booth</th>
                 <th>Toll</th>
                 <th>date</th>
+                <th>Actions</th>
                 </tr>
                 </thead>";
 
