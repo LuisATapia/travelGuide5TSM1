@@ -1,7 +1,13 @@
 <html>
 <head>
 	<title>Cars</title>
-	<?php require("head.php")  ?>
+    <?php require("head.php"); session_start();  ?>
+    <?php
+        if(!isset($_SESSION['idUser']) || $_SESSION['typeUser']=="user")
+        {
+           header("Location: menu_Master.php"); 
+        }
+    ?> 
     <style>
         body{
             background-image: url(img/background_register_cars.jpg);

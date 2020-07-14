@@ -2,7 +2,14 @@
 
 <head>
   <title>Register Travels</title>
-  <?php require("head.php")  ?>
+  <?php require("head.php");  ?>
+  <?php
+    session_start();
+        if(!isset($_SESSION['idUser']))
+        {
+           header("Location: menu_Master.php"); 
+        }
+    ?> 
   <style>
     body {
       background-image: url(img/background_register_travel.jpg);
