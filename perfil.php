@@ -50,6 +50,7 @@
           <label class="form-label"><?php echo $email;?></label>
         </div>
       </form>
+      <a href="pdf/template.php" target="_blank" class="btn btn-success">Generate Report</a>
     </div>
   </div>
 
