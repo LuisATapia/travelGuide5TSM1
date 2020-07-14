@@ -2,7 +2,13 @@
 
 <head>
   <title>Edit TollBooth</title>
-  <?php require("head.php") ?>
+  <?php require("head.php"); ?>
+  <?php
+  session_start();
+  if (!isset($_SESSION['idUser']) || $_SESSION['typeUser'] != "master") {
+    header("Location: menu_Master.php");
+  }
+  ?>
   <style>
     body {
       background-image: url(img/background_register_tollBooth.jpg);
