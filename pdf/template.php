@@ -1,6 +1,6 @@
 <?php
 require('fpdf/fpdf.php');
-session_start();
+//session_start();
 
 class PDF extends FPDF
 {
@@ -71,12 +71,20 @@ $pdf->Cell(45, 10, 'Toll', 1, 0, 'C', 0);
 $pdf->Cell(45, 10, 'Payment date', 1, 1, 'C', 0);
 $pdf->SetFont('Times', '', 12);
 
+
 foreach ($rows as $row) {
-    if ($_SESSION['idUSer'] == $row->_id) {
-        $pdf->Cell(40, 10, $row->numCard, 1, 0, 'C', 0);
-        $pdf->Cell(60, 10, $row->booth, 1, 0, 'C', 0);
-        $pdf->Cell(45, 10, $row->toll, 1, 0, 'C', 0);
-        $pdf->Cell(45, 10, $row->date, 1, 1, 'C', 0);
+    if ($_SESSION['idUser'] == $row->idUser) {
+        $fecha1= new DateTime("now");
+        $fecha2= new DateTime("$row->date");
+        $diff = $fecha1->diff($fecha2);
+        if($diff->days<15)
+        {
+            $pdf->Cell(40, 10, $row->numCard, 1, 0, 'C', 0);
+            $pdf->Cell(60, 10, $row->booth, 1, 0, 'C', 0);
+            $pdf->Cell(45, 10, $row->toll, 1, 0, 'C', 0);
+            $pdf->Cell(45, 10, $row->date, 1, 1, 'C', 0);
+        }
+
     }
 }
 
