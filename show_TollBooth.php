@@ -65,11 +65,12 @@
                 </thead>";
 
           foreach ($rows as $row) {
-            if($_SESSION['typeUser'] == "standard")
+            if($_SESSION['typeUser'] == "standard" || $_SESSION['typeUser'] == "user"  )
             {
               echo "<tr>" .
               "<td>" . $row->name . "</td>" .
               "<td>" . $row->km . "</td>" .
+              "<td>Available</td>".
               "</tr>";
             }else{
             echo "<tr>" .

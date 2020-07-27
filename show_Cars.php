@@ -31,7 +31,7 @@
             <div class="col-lg-12 margin-tb">
                 <div class="pull-right">
                 <?php
-                session_start();
+                //session_start();
                 ?>
                     <a class="btn btn-success" href="register_Cars.php">Add Car<i class="fas fa-car"></i></a>
                 </div>

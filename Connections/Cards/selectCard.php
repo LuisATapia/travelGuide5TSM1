@@ -11,8 +11,16 @@
     try {
         $result = $manager->executeQuery($dbname, $query);
         $row=$result->toArray();
-        $nh=$row[0]->numHexadecimal;
-        $nd=$row[0]->numDecimal;
+
+        if(!isset($row))
+        {
+            $nh=$row[0]->numHexadecimal;
+            $nd=$row[0]->numDecimal;
+        }else
+        {
+            $nh="Sin Asignar";
+            $nd="Sin Asignar";
+        }
         //header("Location: ../../menu_Master.php");
     } catch (MongoDB\Driver\Exception\Exception $e) {
         die("Error Encountered:" . $e);
