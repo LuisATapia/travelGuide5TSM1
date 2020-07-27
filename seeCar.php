@@ -19,7 +19,14 @@
 </head>
 
 <body>
-<?php include 'Connections/Cars/selectCar.php';?>
+<?php 
+try{
+include 'Connections/Cars/selectCar.php';
+}catch(Exception $e)
+{
+    echo "Error en:".$e;
+}
+?>
     <div><?php require("menu_Logged.php") ?></div>
     <div class="card text-center container" id="form">
         <div class="card-header">
@@ -50,7 +57,9 @@
             </form>
         </div>
     </div>
-
+    <?php
+    
+    ?>
 </body>
 
 </html>
