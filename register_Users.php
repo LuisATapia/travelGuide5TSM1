@@ -4,7 +4,7 @@
   <title>Register</title>
   <?php
   session_start();
-  if (!isset($_SESSION['idUser'])) {
+  if (isset($_SESSION['idUser'])) {
     include 'menu_Logged.php';
   } 
   else {
@@ -28,6 +28,7 @@
 </head>
 
 <body>
+  <div><?php require('head.php');?></div>
   <div class="card text-center container" id="form">
     <div class="card-header">
       <h3 class="card-title">Register a new User</h3>
