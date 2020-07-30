@@ -2,9 +2,6 @@
 session_start();
 if (!isset($_SESSION['typeUser']) || isset($_SESSIOn['idUser'])) {
   header("Location: sing_in.php");
-} else {
-  echo $_SESSION['idUser'];
-  echo $_SESSION['typeUser'];
 }
 ?>
 <html>

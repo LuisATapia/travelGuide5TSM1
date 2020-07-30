@@ -2,7 +2,15 @@
 
 <head>
   <title>Register</title>
-  <?php require("head.php"); ?>
+  <?php
+  session_start();
+  if (!isset($_SESSION['idUser'])) {
+    include 'menu_Logged.php';
+  } 
+  else {
+    include 'menu_Standart.php';
+  }
+  ?>
   <style>
     body {
       background-image: url(img/background_register.jpg);
@@ -20,8 +28,6 @@
 </head>
 
 <body>
-  <div> <?php require("menu_Logged.php") ?> </div>
-
   <div class="card text-center container" id="form">
     <div class="card-header">
       <h3 class="card-title">Register a new User</h3>
@@ -38,11 +44,11 @@
         </div>
         <div class="col-md-6">
           <label for="inputCurp" class="form-label">Curp</label>
-          <input type="text" class="form-control" id="inputCurp"name="inputCurp" require>
+          <input type="text" class="form-control" id="inputCurp" name="inputCurp" require>
         </div>
         <div class="col-md-6">
           <label for="inputEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail" name="inputEmail"require>
+          <input type="email" class="form-control" id="inputEmail" name="inputEmail" require>
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Password</label>
@@ -59,4 +65,5 @@
     </div>
   </div>
 </body>
+
 </html>
