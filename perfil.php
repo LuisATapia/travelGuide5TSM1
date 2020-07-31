@@ -30,23 +30,23 @@
     <div class="card-body">
       <form class="row g-3 container m-auto">
         <div class="col-md-6">
-          <label for="inputName" class="form-label">Name:</label>
+          <label for="inputName" class="form-label"><strong>Name:</strong></label>
           <label class="form-label"><?php echo $name;?></label>
         </div>
         <div class="col-md-6">
-          <label for="inputLastName" class="form-label">Last Name:</label>
+          <label for="inputLastName" class="form-label"><strong>Last Name:</strong></label>
           <label class="form-label"><?php echo $last;?></label>
         </div>
         <div class="col-md-6">
-          <label for="inputCurp" class="form-label">Curp</label>
+          <label for="inputCurp" class="form-label"><strong>Curp</strong></label>
           <label class="form-label"><?php echo $curp;?></label>
         </div>
         <div class="col-md-6">
-          <label for="inputCurp" class="form-label">Type User</label>
+          <label for="inputCurp" class="form-label"><strong>Type User</strong></label>
           <label class="form-label"><?php echo $typeUser;?></label>
         </div>
         <div class="col-md-16">
-          <label for="inputEmail" class="form-label">Email</label>
+          <label for="inputEmail" class="form-label"><strong>Email</strong></label>
           <label class="form-label"><?php echo $email;?></label>
         </div>
       </form>

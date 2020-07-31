@@ -16,10 +16,12 @@
         {
             $nh=$row[0]->numHexadecimal;
             $nd=$row[0]->numDecimal;
+            $sol="";
         }else
         {
             $nh="Sin Asignar";
             $nd="Sin Asignar";
+            $sol="Solicita una asignacion";
         }
         //header("Location: ../../menu_Master.php");
     } catch (MongoDB\Driver\Exception\Exception $e) {

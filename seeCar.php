@@ -35,25 +35,26 @@ include 'Connections/Cars/selectCar.php';
         <div class="card-body">
             <form class="row g-3 container m-auto" name="editCar" action="Connections/Cars/assignC.php" method="POST">
                 <div class="col-md-12">
-                    <label for="inputNiv" class="form-label">Niv:</label>
+                    <label for="inputNiv" class="form-label"><strong>Niv:</strong></label>
                     <label class="form-label"> <?php echo $niv;?> </label>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputModel" class="form-label">Model:</label>
+                    <label for="inputModel" class="form-label"><strong>Model:</strong></label>
                     <label class="form-label"> <?php echo $model;?> </label>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputPlate" class="form-label">Plate:</label>
+                    <label for="inputPlate" class="form-label"><strong>Plate:</strong></label>
                     <label class="form-label"> <?php echo $plate;?> </label>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputYear" class="form-label">Year:</label>
+                    <label for="inputYear" class="form-label"><strong>Year:</strong></label>
                     <label class="form-label"> <?php echo $year;?> </label>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputColor" class="form-label">Color:</label>
+                    <label for="inputColor" class="form-label"><strong>Color:</strong></label>
                     <label class="form-label"> <?php echo $color;?> </label>
                 </div>
+                        <div class="col-md-12"><label for="inputHex" class="form-label"><strong><?php echo $sol; ?></strong></label></div>
             </form>
         </div>
     </div>

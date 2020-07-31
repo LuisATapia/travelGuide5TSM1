@@ -28,14 +28,14 @@
     <div class="card-body">
       <form class="row g-3 container m-auto">
         <div class="col-md-6">
-          <label for="inputHex" class="form-label">Number Hex:</label><br>
+          <label for="inputHex" class="form-label"><strong>Number Hex:</strong></label><br>
           <label for="inputHex" class="form-label"><?php echo $nh; ?></label>
         </div>
         <div class="col-md-6">
-          <label for="inputDec" class="form-label">Number Dec:</label><br>
+          <label for="inputDec" class="form-label"><strong>Number Dec:</strong></label><br>
           <label for="inputHex" class="form-label"><?php echo $nd; ?></label>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-12"><label for="inputHex" class="form-label"><strong><?php echo $sol; ?></strong></label></div>
       </form>
     </div>
   </div>

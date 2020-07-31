@@ -17,12 +17,14 @@ try {
         $year = $row[0]->year;
         $plate = $row[0]->plate;
         $color = $row[0]->color;
+        $sol="";
     } else {
         $niv = "Sin Asignar";
         $model = "Sin Asignar";
         $year = "Sin Asignar";
         $plate = "Sin Asignar";
         $color ="Sin Asignar";
+        $sol="Solicita una asignacion";
     }
 
     //header("Location: ../../menu_Master.php");
