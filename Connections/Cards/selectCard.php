@@ -12,7 +12,7 @@
         $result = $manager->executeQuery($dbname, $query);
         $row=$result->toArray();
 
-        if(!isset($row))
+        if(isset($row))
         {
             $nh=$row[0]->numHexadecimal;
             $nd=$row[0]->numDecimal;

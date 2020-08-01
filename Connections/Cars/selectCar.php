@@ -11,14 +11,14 @@ $query = new MongoDB\Driver\Query($filter);
 try {
     $result = $manager->executeQuery($dbname, $query);
     $row = $result->toArray();
-    if (!isset($row)) {
+    if (isset($row)) {
         $niv = $row[0]->niv;
         $model = $row[0]->model;
         $year = $row[0]->year;
         $plate = $row[0]->plate;
         $color = $row[0]->color;
         $sol="";
-    } else {
+    }else {
         $niv = "Sin Asignar";
         $model = "Sin Asignar";
         $year = "Sin Asignar";
