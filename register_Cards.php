@@ -33,18 +33,15 @@
     </div>
     <div class="card-body">
       <form class="row g-3 container m-auto" name="registerCad" method="POST" action="Connections/Cards/registerCard.php">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label for="inputHex" class="form-label">Number Hex:</label>
           <input type="text" class="form-control" id="cardHex" name="cardHex" require="">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label for="inputDec" class="form-label">Number Dec:</label>
           <input type="text" class="form-control" id="cardDec" name="cardDec" require="">
         </div>
-        <div class="col-md-4">
-          <label for="inputIdUser" class="form-label">Id User:</label>
-          <input type="text" class="form-control" id="cardIdUser" name="cardIdUser" require="">
-        </div>
+          <input type="hidden" class="form-control" id="cardIdUser" name="cardIdUser" require="">
         <div class="col-12">
           <Input type="submit" class="btn btn-primary" onclick="" value="Register">
         </div>
